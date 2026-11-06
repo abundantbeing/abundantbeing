@@ -39,10 +39,10 @@
 
 ## Stack
 
-<p>
-  <img src="assets/stack/typescript.svg" height="58" alt="TypeScript">
-  <img src="assets/stack/python.svg" height="58" alt="Python">
-  <img src="assets/stack/chrome-mv3.svg" height="58" alt="Chrome MV3"><br>
-  <img src="assets/stack/electron.svg" height="58" alt="Electron">
-  <img src="assets/stack/hermes-agent.svg" height="58" alt="Hermes Agent">
+<p align="center">
+  <img src="assets/tags/typescript.svg" height="44" alt="TypeScript">
+  <img src="assets/tags/python.svg" height="44" alt="Python">
+  <img src="assets/tags/chrome-mv3.svg" height="44" alt="Chrome MV3">
+  <img src="assets/tags/electron.svg" height="44" alt="Electron">
+  <img src="assets/tags/hermes-agent.svg" height="44" alt="Hermes Agent">
 </p>
