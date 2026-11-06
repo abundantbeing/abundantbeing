@@ -39,8 +39,10 @@
 
 ## Stack
 
-TypeScript · Python · Chrome MV3 · Electron · Hermes Agent
-
-## Now
-
-Hermes plugins and browser tooling.
+<p>
+  <img src="assets/stack/typescript.svg" height="58" alt="TypeScript">
+  <img src="assets/stack/python.svg" height="58" alt="Python">
+  <img src="assets/stack/chrome-mv3.svg" height="58" alt="Chrome MV3"><br>
+  <img src="assets/stack/electron.svg" height="58" alt="Electron">
+  <img src="assets/stack/hermes-agent.svg" height="58" alt="Hermes Agent">
+</p>
