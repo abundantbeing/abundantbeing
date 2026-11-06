@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/hero.png" width="100%" alt="Komet Studios banner: Jon Komet, with the pixel Komet mascot on a midnight sky.">
+  <img src="assets/hero.svg" width="100%" alt="Jon Komet: the brand, the site, the software and the agents. One system, built by one person.">
 </p>
 
 <p align="center">
