@@ -12,26 +12,31 @@
 
 <table>
   <tr>
-    <td width="50%" valign="top">
+    <td colspan="3" width="50%" valign="top">
       <a href="https://github.com/abundantbeing/hermes-browser-extension">
-        <img src="assets/tiles/hermes-browser-extension.svg" alt="Hermes Browser Extension: a side panel for Hermes Agent in your browser.">
+        <img src="assets/tiles/hermes-browser-extension.svg" width="100%" alt="Hermes Browser Extension: a side panel for Hermes Agent in your browser.">
       </a>
     </td>
-    <td width="50%" valign="top">
-      <a href="https://github.com/abundantbeing/cadence">
-        <img src="assets/tiles/cadence.svg" alt="Cadence: streaks, a heatmap and model mix for Hermes.">
+    <td colspan="3" width="50%" valign="top">
+      <a href="https://github.com/abundantbeing/hermes-trophy-room">
+        <img src="assets/tiles/hermes-trophy-room.svg" width="100%" alt="Hermes Trophy Room: 120 achievements for Hermes Desktop, as collectible cards.">
       </a>
     </td>
   </tr>
   <tr>
-    <td width="50%" valign="top">
-      <a href="https://github.com/abundantbeing/vibeleak-skills">
-        <img src="assets/tiles/vibeleak-skills.svg" alt="VibeLeak Skills: agent skills for website trust scans and fixes.">
+    <td colspan="2" width="33%" valign="top">
+      <a href="https://github.com/abundantbeing/cadence">
+        <img src="assets/tiles/small/cadence.svg" width="100%" alt="Cadence: streaks, a heatmap and model mix for Hermes.">
       </a>
     </td>
-    <td width="50%" valign="top">
+    <td colspan="2" width="33%" valign="top">
+      <a href="https://github.com/abundantbeing/vibeleak-skills">
+        <img src="assets/tiles/small/vibeleak-skills.svg" width="100%" alt="VibeLeak Skills: agent skills for website trust scans and fixes.">
+      </a>
+    </td>
+    <td colspan="2" width="33%" valign="top">
       <a href="https://github.com/abundantbeing/vibeleak-atlas">
-        <img src="assets/tiles/vibeleak-atlas.svg" alt="VibeLeak Atlas: a Hermes plugin for owner-approved website assessments and local code review.">
+        <img src="assets/tiles/small/vibeleak-atlas.svg" width="100%" alt="VibeLeak Atlas: a Hermes plugin for owner-approved website assessments and local code review.">
       </a>
     </td>
   </tr>
