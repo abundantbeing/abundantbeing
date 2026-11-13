@@ -1,8 +1,8 @@
-"""Builds the Trophy Room tile and the three small square tiles from the existing project tiles.
+"""Builds the Trophy Room and matchcut tiles and the three small square tiles from the existing project tiles.
 
 Run from the repo root: python tools/make_tiles.py
 Reads assets/tiles/{cadence,vibeleak-skills,vibeleak-atlas}.svg, writes
-assets/tiles/hermes-trophy-room.svg and assets/tiles/small/*.svg.
+assets/tiles/hermes-trophy-room.svg, assets/tiles/matchcut.svg and assets/tiles/small/*.svg.
 """
 import base64, colorsys, io, re
 from pathlib import Path
@@ -85,6 +85,39 @@ def trophy_tile():
     (T / 'hermes-trophy-room.svg').write_text(svg, encoding='utf-8', newline='\n')
 
 
+def matchcut_tile():
+    src = (T / 'cadence.svg').read_text(encoding='utf-8')
+    accent = '#39e0c3'
+    head, body = src.split('</defs>', 1)
+    body = re.sub(r'<rect x="720" y="24"[^>]*/>', '', body)
+    body = re.sub(r'<rect x="\d+" y="\d+" width="24" height="24"[^>]*><animate[^>]*/></rect>', '', body)
+    body = re.sub(r'<text .*?</text>', '', body, flags=re.S)
+    svg = head + '</defs>' + body
+    svg = recolor(svg, 82, {'#8f7bff': accent})
+    svg = svg.replace('Cadence: streaks, a heatmap and model mix for Hermes.', 'matchcut: agent skills for product launch films from your real app.')
+    # an edit timeline where the heatmap was: clips on a track, beat ticks, a playhead sweeping across
+    p = [f'<rect x="720" y="24" width="408" height="152" fill="#07070e" fill-opacity=".94" stroke="{accent}" stroke-opacity=".35" stroke-width="1.5"/>']
+    for i in range(16):
+        x = 744 + i * 23.5
+        p.append(f'<rect x="{x:.1f}" y="44" width="2" height="{10 if i % 4 == 0 else 5}" fill="{accent}" fill-opacity="{.9 if i % 4 == 0 else .4}"/>')
+    clips = [(744, 70, '#5b6cff'), (818, 92, accent), (914, 58, '#8fe3ff'), (976, 128, accent)]
+    for x, w, col in clips:
+        p.append(f'<rect x="{x}" y="66" width="{w - 4}" height="34" fill="{col}" fill-opacity=".22" stroke="{col}" stroke-width="2"/>')
+        p.append(f'<rect x="{x + 6}" y="74" width="{max(10, w - 30)}" height="5" fill="{col}" fill-opacity=".7"/>')
+    p.append('<rect x="744" y="108" width="356" height="10" fill="#ffffff" fill-opacity=".06"/>')
+    for x in (750, 790, 830, 870, 910, 950, 990, 1030, 1070):
+        p.append(f'<rect x="{x}" y="110" width="22" height="6" fill="{accent}" fill-opacity=".35"/>')
+    p.append(f'<rect x="744" y="38" width="3" height="86" fill="#ffffff"><animate attributeName="x" values="744;1100" dur="4s" repeatCount="indefinite"/></rect>')
+    p.append(f'<text class="k" x="924" y="156" text-anchor="middle" fill="{accent}" style="font-size:15px;letter-spacing:3px">EVERY CUT ON THE BEAT</text>')
+    text = (f'<text class="k" x="72" y="168" fill="{accent}">AGENT SKILLS</text>'
+            '<text class="t" x="72" y="318" font-size="132">matchcut</text>'
+            '<text class="s" x="72" y="410">Launch films from your real app,</text>'
+            '<text class="s" x="72" y="452">cut like a trailer.</text>'
+            '<text class="m" x="72" y="548">github.com/abundantbeing/matchcut</text>')
+    svg = svg.replace('<rect width="1200" height="600" fill="url(#vig)"/>', '<rect width="1200" height="600" fill="url(#vig)"/>' + ''.join(p) + text, 1)
+    (T / 'matchcut.svg').write_text(svg, encoding='utf-8', newline='\n')
+
+
 def small(name, kicker, lines, accent, label):
     src = (T / f'{name}.svg').read_text(encoding='utf-8')
     defs, bg, flame, fy = parts(src)
@@ -112,4 +145,5 @@ trophy_tile()
 small('cadence', 'LOCAL USAGE PAGE', ['Cadence'], '#8f7bff', 'Cadence: streaks, a heatmap and model mix for Hermes.')
 small('vibeleak-skills', 'AGENT SKILLS', ['VibeLeak', 'Skills'], '#36d399', 'VibeLeak Skills: agent skills for website trust scans and fixes.')
 small('vibeleak-atlas', 'HERMES PLUGIN', ['VibeLeak', 'Atlas'], '#36d399', 'VibeLeak Atlas: a Hermes plugin for owner-approved website assessments and local code review.')
+matchcut_tile()
 print('ok')

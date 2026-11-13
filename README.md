@@ -12,14 +12,21 @@
 
 <table>
   <tr>
-    <td colspan="3" width="50%" valign="top">
+    <td colspan="6" width="100%" valign="top">
       <a href="https://github.com/abundantbeing/hermes-browser-extension">
         <img src="assets/tiles/hermes-browser-extension.svg" width="100%" alt="Hermes Browser Extension: a side panel for Hermes Agent in your browser.">
       </a>
     </td>
+  </tr>
+  <tr>
     <td colspan="3" width="50%" valign="top">
       <a href="https://github.com/abundantbeing/hermes-trophy-room">
         <img src="assets/tiles/hermes-trophy-room.svg" width="100%" alt="Hermes Trophy Room: 120 achievements for Hermes Desktop, as collectible cards.">
+      </a>
+    </td>
+    <td colspan="3" width="50%" valign="top">
+      <a href="https://github.com/abundantbeing/matchcut">
+        <img src="assets/tiles/matchcut.svg" width="100%" alt="matchcut: agent skills for product launch films from your real app, cut like a trailer.">
       </a>
     </td>
   </tr>
